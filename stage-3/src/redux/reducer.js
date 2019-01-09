@@ -28,8 +28,7 @@ export default function reducer(state=initialState, action) {
             let newArray = state.shoppingCart.slice();
             newArray.splice(action.index, 1);
             return Object.assign({}, {shoppingCart: newArray});
-            
-        defualt:
+        default:
             return state;
     }
 }
@@ -49,7 +48,7 @@ export function removeFromShoppingCart(productIndex) {
     }
 }
 
-export function getAllProducts(products) {
+export function getAllProducts() {
     return {
         type: GET_ALL_PRODUCTS,
         payload: productsController.getAllProducts()
